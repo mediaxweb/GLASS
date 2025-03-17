@@ -226,6 +226,7 @@ class MVTecDataset(torch.utils.data.Dataset):
                 maskpaths_per_class[self.classname]["good"] = None
 
         data_to_iterate = []
+        print(maskpaths_per_class)
         for classname in sorted(imgpaths_per_class.keys()):
             for anomaly in sorted(imgpaths_per_class[classname].keys()):
                 for i, image_path in enumerate(imgpaths_per_class[classname][anomaly]):
