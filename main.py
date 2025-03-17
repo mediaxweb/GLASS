@@ -13,7 +13,7 @@ import utils
 
 
 @click.group(chain=True)
-@click.option("--results_path", type=str, default="results")
+@click.option("--results_path", type=str, default="/content/results")
 @click.option("--gpu", type=int, default=[0], multiple=True, show_default=True)
 @click.option("--seed", type=int, default=0, show_default=True)
 @click.option("--log_group", type=str, default="group")
