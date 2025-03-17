@@ -284,8 +284,8 @@ class GLASS(torch.nn.Module):
                 self.logger.logger.add_scalar("p-ap", pixel_ap, i_epoch)
                 self.logger.logger.add_scalar("p-pro", pixel_pro, i_epoch)
 
-                eval_path = './results/eval/' + name + '/'
-                train_path = './results/training/' + name + '/'
+                eval_path = '/content/results/eval/' + name + '/'
+                train_path = '/content/results/training/' + name + '/'
                 if best_record is None:
                     best_record = [image_auroc, image_ap, pixel_auroc, pixel_ap, pixel_pro, i_epoch]
                     ckpt_path_best = os.path.join(self.ckpt_dir, "ckpt_best_{}.pth".format(i_epoch))
