@@ -171,6 +171,7 @@ def dataset(
 
     def get_dataloaders(seed, test, get_name=name):
         dataloaders = []
+        print(subdatasets)
         for subdataset in subdatasets:
             test_dataset = dataset_library.__dict__[dataset_info[1]](
                 data_path,
