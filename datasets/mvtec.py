@@ -216,9 +216,11 @@ class MVTecDataset(torch.utils.data.Dataset):
             
             if self.split == DatasetSplit.TEST and anomaly != "good":
                 anomaly_mask_path = os.path.join(maskpath, anomaly)
-                anomaly_mask_files = sorted(os.listdir(anomaly_mask_path))
-                print(anomaly_mask_path)
-                maskpaths_per_class[self.classname][anomaly] = [os.path.join(anomaly_mask_path, x) for x in anomaly_mask_files]
+                if os.path.isdir(anomaly_mask_path):
+                    anomaly_mask_files = sorted(os.listdir(anomaly_mask_path))
+                    maskpaths_per_class[self.classname][anomaly] = [os.path.join(anomaly_mask_path, x) for x in anomaly_mask_files]
+                else:
+                    print(f"Error: {anomaly_mask_path} is not a folder.")
                 # maskpaths_per_class[self.classname][anomaly] = None
             else:
                 maskpaths_per_class[self.classname]["good"] = None
