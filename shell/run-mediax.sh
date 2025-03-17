@@ -1,6 +1,6 @@
 datapath=/content/dataset/mediax
 augpath=/content/dtd
-classes=('bottle')
+classes=('encoder')
 flags=($(for class in "${classes[@]}"; do echo '-d '"${class}"; done))
 
 cd ..
@@ -30,7 +30,7 @@ python /content/GLASS/main.py \
     --distribution 0 \
     --mean 0.5 \
     --std 0.1 \
-    --fg 1 \
+    --fg 0 \
     --rand_aug 1 \
     --batch_size 8 \
     --resize 288 \
