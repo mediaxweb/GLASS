@@ -1,4 +1,4 @@
-datapath=/root/cqy/dataset/MVTec
+datapath=/content/dataset/mediax
 augpath=/content/dtd
 classes=('bottle')
 flags=($(for class in "${classes[@]}"; do echo '-d '"${class}"; done))
