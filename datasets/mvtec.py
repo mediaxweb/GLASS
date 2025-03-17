@@ -229,8 +229,8 @@ class MVTecDataset(torch.utils.data.Dataset):
             imgpaths_per_class[self.classname][anomaly] = [os.path.join(anomaly_path, x) for x in anomaly_files]
 
             if self.split == DatasetSplit.TEST and anomaly != "good":
-                anomaly_mask_path = os.path.join(maskpath, anomaly)
-                anomaly_mask_files = sorted(os.listdir(anomaly_mask_path))
+                # anomaly_mask_path = os.path.join(maskpath, anomaly)
+                # anomaly_mask_files = sorted(os.listdir(anomaly_mask_path))
                 # maskpaths_per_class[self.classname][anomaly] = [os.path.join(anomaly_mask_path, x) for x in anomaly_mask_files]
                 maskpaths_per_class[self.classname][anomaly] = None
             else:
