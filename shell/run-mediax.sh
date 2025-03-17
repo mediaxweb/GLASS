@@ -4,7 +4,7 @@ classes=('bottle')
 flags=($(for class in "${classes[@]}"; do echo '-d '"${class}"; done))
 
 cd ..
-python main.py \
+python /content/GLASS/main.py \
     --gpu 0 \
     --seed 0 \
     --test test \
