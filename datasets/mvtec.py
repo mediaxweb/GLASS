@@ -116,7 +116,7 @@ class MVTecDataset(torch.utils.data.Dataset):
         self.imgpaths_per_class, self.data_to_iterate = self.get_image_data()
         self.anomaly_source_paths = sorted(1 * glob.glob(anomaly_source_path + "/*/*.jpg") +
                                            0 * list(next(iter(self.imgpaths_per_class.values())).values())[0])
-
+        print(self.anomaly_source_paths)
         self.transform_img = [
             transforms.Resize(self.resize),
             transforms.ColorJitter(brightness_factor, contrast_factor, saturation_factor),
