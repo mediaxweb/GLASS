@@ -1,13 +1,13 @@
 datapath=/root/cqy/dataset/MVTec
 augpath=/content/dtd
-classes=('carpet' 'grid' 'leather' 'tile' 'wood' 'bottle' 'cable' 'capsule' 'hazelnut' 'metal_nut' 'pill' 'screw' 'toothbrush' 'transistor' 'zipper')
+classes=('bottle')
 flags=($(for class in "${classes[@]}"; do echo '-d '"${class}"; done))
 
 cd ..
 python main.py \
     --gpu 0 \
     --seed 0 \
-    --test ckpt \
+    --test test \
   net \
     -b wideresnet50 \
     -le layer2 \
