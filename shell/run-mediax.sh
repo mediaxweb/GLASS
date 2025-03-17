@@ -1,5 +1,5 @@
 datapath=/content/dataset/mediax
-augpath=/content/dtd
+augpath=/content/dtd/images
 classes=('encoder')
 flags=($(for class in "${classes[@]}"; do echo '-d '"${class}"; done))
 
