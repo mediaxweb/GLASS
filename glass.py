@@ -500,6 +500,8 @@ class GLASS(torch.nn.Module):
         # image_scores = metrics.compute_imagewise_retrieval_metrics(norm_scores, labels_gt, path)
         # image_auroc = image_scores["auroc"]
         # image_ap = image_scores["ap"]
+        image_auroc = -100
+        image_ap = -100
 
         if len(masks_gt) > 0:
             segmentations = np.array(segmentations)
