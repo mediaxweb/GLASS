@@ -45,7 +45,7 @@ class MVTecDataset(torch.utils.data.Dataset):
     def __init__(
             self,
             source,
-            anomaly_source_path='/root/dataset/dtd/images',
+            anomaly_source_path='/content/dtd/images',
             dataset_name='mvtec',
             classname='leather',
             resize=288,
