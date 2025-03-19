@@ -15,7 +15,7 @@ python /content/GLASS/main.py \
     --pretrain_embed_dimension 1536 \
     --target_embed_dimension 1536 \
     --patchsize 3 \
-    --meta_epochs 128 \
+    --meta_epochs 256 \
     --eval_epochs 1 \
     --dsc_layers 2 \
     --dsc_hidden 1024 \
