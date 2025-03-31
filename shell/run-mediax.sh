@@ -33,7 +33,7 @@ python /content/GLASS/main.py \
     --fg 0 \
     --rand_aug 1 \
     --batch_size 8 \
-    --resize 576 \
-    --imagesize 576 "${flags[@]}" mvtec $datapath $augpath
+    --resize 288 \
+    --imagesize 288 "${flags[@]}" mvtec $datapath $augpath
     
     
