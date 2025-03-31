@@ -25,7 +25,7 @@ python /content/GLASS/main.py \
     --radius 0.75 \
     --p 0.5 \
     --step 20 \
-    --limit 392 \
+    --limit 810 \
   dataset \
     --distribution 0 \
     --mean 0.5 \
