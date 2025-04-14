@@ -497,11 +497,11 @@ class GLASS(torch.nn.Module):
         img_max_scores = max(scores)
         norm_scores = (scores - img_min_scores) / (img_max_scores - img_min_scores + 1e-10)
 
-        # image_scores = metrics.compute_imagewise_retrieval_metrics(norm_scores, labels_gt, path)
-        # image_auroc = image_scores["auroc"]
-        # image_ap = image_scores["ap"]
-        image_auroc = -100
-        image_ap = -100
+        image_scores = metrics.compute_imagewise_retrieval_metrics(norm_scores, labels_gt, path)
+        image_auroc = image_scores["auroc"]
+        image_ap = image_scores["ap"]
+        # image_auroc = -100
+        # image_ap = -100
 
         if len(masks_gt) > 0:
             segmentations = np.array(segmentations)
@@ -509,20 +509,20 @@ class GLASS(torch.nn.Module):
             max_scores = np.max(segmentations)
             norm_segmentations = (segmentations - min_scores) / (max_scores - min_scores + 1e-10)
 
-            # pixel_scores = metrics.compute_pixelwise_retrieval_metrics(norm_segmentations, masks_gt, path)
-            # pixel_auroc = pixel_scores["auroc"]
-            # pixel_ap = pixel_scores["ap"]
-            # if path == 'eval':
-            #     try:
-            #         pixel_pro = metrics.compute_pro(np.squeeze(np.array(masks_gt)), norm_segmentations)
+            pixel_scores = metrics.compute_pixelwise_retrieval_metrics(norm_segmentations, masks_gt, path)
+            pixel_auroc = pixel_scores["auroc"]
+            pixel_ap = pixel_scores["ap"]
+            if path == 'eval':
+                try:
+                    pixel_pro = metrics.compute_pro(np.squeeze(np.array(masks_gt)), norm_segmentations)
 
-            #     except:
-            #         pixel_pro = 0.
-            # else:
-            #     pixel_pro = 0.
-            pixel_auroc = -1.
-            pixel_ap = -1.
-            pixel_pro = -1.
+                except:
+                    pixel_pro = 0.
+            else:
+                pixel_pro = 0.
+            # pixel_auroc = -1.
+            # pixel_ap = -1.
+            # pixel_pro = -1.
         else:
             pixel_auroc = -1.
             pixel_ap = -1.
